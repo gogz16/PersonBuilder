@@ -1,5 +1,7 @@
 package a.syrov;
 
+import java.util.OptionalInt;
+
 public class Person {
     protected final String name;
     protected final String surname;
@@ -36,8 +38,8 @@ public class Person {
         return surname;
     }
 
-    public int getAge() {
-        return hasAge() ? age : -1;  // -1 означает "возраст неизвестен"
+    public OptionalInt getAge() {
+        return hasAge() ? OptionalInt.of(age) : OptionalInt.empty();
     }
 
     public String getAddress() {
